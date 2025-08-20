@@ -9,6 +9,8 @@
 
 **Project:** **Automated Report Generation**
 
+![Report Screenshot](screenshot.png)
+
 **Objective:**
 
 The objective of this task is to develop a Python script that reads data from a file, analyzes it, and automatically generates a formatted PDF report using libraries such as ReportLab.
