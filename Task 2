@@ -1,0 +1,33 @@
+import pandas as pd
+
+data = {
+    "Product": ["A", "B", "C", "D", "E"],
+    "Sales": [120, 340, 180, 90, 210]
+}
+df = pd.DataFrame(data)
+df.to_csv("sales.csv", index=False)
+print("Sample CSV created ")
+
+df = pd.read_csv("sales.csv")
+total_sales = df["Sales"].sum()
+avg_sales = df["Sales"].mean()
+max_product = df.loc[df["Sales"].idxmax(), "Product"]
+min_product = df.loc[df["Sales"].idxmin(), "Product"]
+
+from fpdf import FPDF
+
+pdf = FPDF()
+pdf.add_page()
+pdf.set_font("Arial", size=12)
+
+pdf.cell(200, 10, txt="Sales Report", ln=True, align="C")
+pdf.ln(10)
+
+pdf.cell(200, 10, txt=f"Total Sales: {total_sales}", ln=True)
+pdf.cell(200, 10, txt=f"Average Sales: {avg_sales:.2f}", ln=True)
+pdf.cell(200, 10, txt=f"Best Performing Product: {max_product}", ln=True)
+pdf.cell(200, 10, txt=f"Lowest Performing Product: {min_product}", ln=True)
+
+pdf.output("Sample_Report.pdf")
+print("PDF Generated ")
+
