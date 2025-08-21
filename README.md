@@ -1,7 +1,11 @@
 **Name:** AGASTHIYA DS
+
 **Company:** CODTECH IT SOLUTIONS
+
 **ID:** CT04DZ838
+
 **Domain:** Python Programming
+
 **Duration:** July 21st to August 21st 2025
 
 
